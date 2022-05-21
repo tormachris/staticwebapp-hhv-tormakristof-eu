@@ -30,7 +30,7 @@ export default defineComponent({
 
 <template>
   <div>
-    <h1>
+    <h1 class="text-center">
       {{weeknumber}}
     </h1>
   </div>
@@ -40,6 +40,5 @@ export default defineComponent({
 h1 {
   font-weight: 500;
   font-size: 5rem;
-  top: -10px;
 }
 </style>

@@ -18,6 +18,10 @@ import WeekNumber from './components/WeekNumber.vue'
     background-color: var(--bs-dark);
   }
 
+  main {
+    left: 50%;
+  }
+
   #app {
     display: grid;
     grid-template-columns: 1fr 1fr;
