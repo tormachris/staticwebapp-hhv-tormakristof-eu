@@ -1,22 +1,31 @@
 <script lang="ts">
-import axios from "axios";
+import { defineComponent } from "vue";
+import HHVDataService from "@/services/HHVDataService";
+import type HHV from "@/types/HHV";
+import type ResponseData from "@/types/ResponseData";
 
-export default {
+export default defineComponent({
   data() {
     return {
-      weeknumber: 0,
+      weeknumber: {} as HHV,
     };
   },
-  
-  async created() {
-    try {
-      const res = await axios.get("https://hanyadikhetvan.tormakristof.eu/");
-      this.weeknumber = res.data;
-    } catch (error) {
-      console.log(error);
+  methods: {
+    retrieveWeekNumber() {
+        HHVDataService.getWeekNumber()
+          .then((response: ResponseData) => {
+            this.weeknumber = response.data;
+            console.log(response.data);
+          })
+          .catch((e: Error) => {
+            console.log(e);
+          });
     }
-  }
-}
+  },
+  mounted() {
+    this.retrieveWeekNumber();
+  },
+});
 </script>
 
 <template>
