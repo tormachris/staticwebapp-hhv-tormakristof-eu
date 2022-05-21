@@ -1,0 +1,12 @@
+kind: pipeline
+type: docker
+name: Azure Static WebApp
+
+steps:
+- name: Build and upload static web app
+  environment:
+    APITOKEN:
+     from_secret: APITOKEN
+  image: mcr.microsoft.com/appsvc/staticappsclient:stable
+  commands:
+  - /bin/staticsites/StaticSitesClient --apiToken $APITOKEN --outputLocation "dist" --app "/drone/src" --deploymentaction "upload"
