@@ -7,7 +7,7 @@ import type ResponseData from "@/types/ResponseData";
 export default defineComponent({
   data() {
     return {
-      weeknumber: {} as HHV,
+      weeknumber: 0 as number,
     };
   },
   methods: {
