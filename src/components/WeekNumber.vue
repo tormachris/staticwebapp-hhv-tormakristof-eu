@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import HHVDataService from "@/services/HHVDataService";
-import type HHV from "@/types/HHV";
 import type ResponseData from "@/types/ResponseData";
 
 export default defineComponent({
