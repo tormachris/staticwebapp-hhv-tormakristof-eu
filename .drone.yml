@@ -9,5 +9,5 @@ steps:
      from_secret: APITOKEN
   image: mcr.microsoft.com/appsvc/staticappsclient:stable
   commands:
-  - pip install --target="/drone/src/api/.python_packages/lib/site-packages" -r /drone/src/api/requirements.txt
+  - pip install --target="/drone/src/ss-oryx/api.python_packages/lib/site-packages" -r /drone/src/api/requirements.txt
   - /bin/staticsites/StaticSitesClient --apiToken $APITOKEN --outputLocation "dist" --app "/drone/src" --api "/drone/src/api"  --deploymentaction "upload" --verbose true
