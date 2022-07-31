@@ -9,4 +9,4 @@ steps:
      from_secret: APITOKEN
   image: mcr.microsoft.com/appsvc/staticappsclient:stable
   commands:
-  - /bin/staticsites/StaticSitesClient --apiToken $APITOKEN --outputLocation "dist" --app "/drone/src" --api "/drone/src/api"  --deploymentaction "upload" --verbose
+  - /bin/staticsites/StaticSitesClient --apiToken $APITOKEN --outputLocation "dist" --app "/drone/src" --api "/drone/src/api"  --deploymentaction "upload" --verbose true
